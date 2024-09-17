@@ -1,0 +1,13 @@
+[Unit]
+Description=Servicio de Monitoreo de Cambios en Directorios
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/charlie/Lab-2/monitoreo_directorio.sh 
+WorkingDirectory=/home/charlie/Lab-2
+#Agregamos este restart al codigo sugerido en el documento del lab para que cada vez que haya un error se reinicie
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+
